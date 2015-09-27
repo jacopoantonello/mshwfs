@@ -27,6 +27,9 @@ end
 sfigure(5);
 imshow(bw);
 title('binary image');
+drawnow();
+pause(.1);
+
 %% remove small objects
 bw = bwareaopen(bw, npixsmall);
 %% remove edges

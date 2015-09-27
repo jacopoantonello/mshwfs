@@ -11,6 +11,9 @@ mkdir(sprintf('calibration-%s', shstruct.calibration_date));
 sfigure(1);
 imshow(sh_flat_bg);
 title('background');
+drawnow();
+pause(.1);
+
 %% flat mirror reference
 sfigure(2);
 imshow(sh_flat);

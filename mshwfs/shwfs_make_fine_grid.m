@@ -60,6 +60,8 @@ sfigure(7);
 plot(mins, 'o');
 xlabel('spot number');
 ylabel('radius');
+drawnow()
+pause(.1);
 
 % estimate pupil radius
 shstruct.est_pupil_radius_m = ...
