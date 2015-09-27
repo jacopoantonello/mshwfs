@@ -6,7 +6,7 @@
 
 function [w, wv] = zernike_eval(zstruct, zc)
 if nargout == 1
-    w = reshape(zstruct.zi*zc, size(zstruct.xx));
+    w = reshape(zstruct.zi*zc, size(zstruct.th));
 elseif nargout == 2
     w =[];
     wv = zstruct.zi*zc;
