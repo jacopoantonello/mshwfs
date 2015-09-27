@@ -24,20 +24,14 @@ if use_bg
 else
     bw = im2bw(sh_flat, thresh);
 end
-sfigure(3);
+sfigure(5);
 imshow(bw);
 title('binary image');
 %% remove small objects
 bw = bwareaopen(bw, npixsmall);
-% sfigure(4);
-% imshow(bw);
-% title('remove small objects 1');
 %% remove edges
 se = strel('disk',strel_rad);
 bw = imclose(bw, se);
-% sfigure(5);
-% imshow(bw);
-% title('remove small objects 2');
 %%
 cc = bwconncomp(bw, 4);
 s = regionprops(cc, 'Centroid');

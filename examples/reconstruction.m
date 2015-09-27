@@ -24,21 +24,30 @@ dd = linspace(-1, 1, 80);
 [xx, yy] =  meshgrid(dd, dd);
 zstruct = zernike_cache(zstruct, xx, yy);
 
+sfigure(1);
+
+subplot(2, 2, 1:2);
 zcs = [0; zhatrad];
 sel = 1:size(zhatrad, 1);
-plot(sel, zcs(sel), 'x', 'MarkerSize', 32);
-varrad = sum(zcs(2:end).^2);
-strehl = exp(-sum(zcs(2:end).^2));
-title(sprintf('norm(s - se) %.8f Strehl %.3f varrad %f norminf %.4f', ...
-    norm(er), strehl, varrad,...
-    norm(zcs(2:end), inf)));
+% plot(sel, zcs(sel), 'x', 'MarkerSize', 32);
+plot(sel, zcs(sel), 'Marker', 'x');
+
+rms1 = norm(zcs(2:end));
+strehl = exp(-rms1.^2);
+title(sprintf('strehl=%.3f rms=%.2f norm(er)=%.2f', strehl, rms1, ...
+    norm(er)));
 set(gca, 'XTick', sel);
-xlabel('zernike coeff');
+xlabel('Z_i');
 ylabel('rad');
 grid on;
 
-figure(5);
+subplot(2, 2, 3);
 zernike_surf(zstruct, zcs);
-% view(2);
 zlabel('rad');
 shading interp;
+
+subplot(2, 2, 4);
+zernike_imagesc(zstruct, zcs);
+axis equal;
+axis off;
+title(sprintf('%d Zernike polynomials', zstruct.ncoeff));

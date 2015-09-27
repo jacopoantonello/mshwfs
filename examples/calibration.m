@@ -31,7 +31,7 @@ shstruct.maxinteger = 2^16 - 1;       % maximum integer value for the image
 
 %% params Dai modal wavefront estimation
 shstruct.sa_radius_m = shstruct.pitch/2;
-shstruct.dai_n_zernike = 5;  % maximum radial order of the Zernike polynomials
+shstruct.dai_n_zernike = 5;  % max radial order of the Zernike polynomials
 
 %% replace your reference SHWFS images here
 load sh_flat;    % (almost) diffraction-limited image taken with the SHWFS

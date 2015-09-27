@@ -56,7 +56,7 @@ for i=1:nspots
 end
 radius = mean(mins)/2*shstruct.multiply_est_radius;
 
-sfigure(3);
+sfigure(7);
 plot(mins, 'o');
 xlabel('spot number');
 ylabel('radius');
@@ -80,7 +80,7 @@ end
 %% draw fine grid
 grid = shstruct.squaregrid;
 
-sfigure(4);
+sfigure(8);
 imshow(sh_flat);
 hold on;
 spotxy = centres(icentralspot, :);
@@ -96,6 +96,7 @@ for i=1:nspots
     text(cc(1), cc(3), ...
         sprintf('%d', i), 'Color', 'g');
 end
+hold off;
 %% unused, code for zonal is outdated
 shstruct.enumeration = 1:shstruct.nspots;
 shstruct.ord_centres = shstruct.centres(shstruct.enumeration, :);

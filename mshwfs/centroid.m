@@ -18,7 +18,7 @@ if (nargin < 2)
     thr = 0;
 end
 
-[w h] = size(im);
+[w, h] = size(im);
 
 [yy, xx] = meshgrid(1:h, 1:w);
 im(im < thr) = 0;
@@ -46,7 +46,7 @@ mass = sum(im(:));
 % sumx = sumx1;
 % sumy = sumy1;
 
-ret = [sumx/mass sumy/mass];
+ret = [sumx/mass, sumy/mass];
 % ret = round(ret);
 
 % if select
