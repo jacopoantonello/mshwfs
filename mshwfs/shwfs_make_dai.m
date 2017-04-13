@@ -45,13 +45,14 @@ c = shstruct.pupil_centre_pix;
 plot(c(1), c(2), 'xm', 'MarkerSize', 13);
 
 % pupil
-dists = shstruct.ord_centres - ...
-    kron(ones(shstruct.nspots, 1), shstruct.pupil_centre_pix);
-[~, i] = sort(sqrt(sum(dists, 2).^2));
-shstruct.pupil_radius_m = norm(shstruct.ord_centres(i(end), :) - ...
-    shstruct.pupil_centre_pix)*shstruct.camera_pixsize + ...
-    shstruct.sa_radius_m;
-
+if ~isfield(shstruct, 'pupil_radius_m')
+    dists = shstruct.ord_centres - ...
+        kron(ones(shstruct.nspots, 1), shstruct.pupil_centre_pix);
+    [~, i] = sort(sqrt(sum(dists, 2).^2));
+    shstruct.pupil_radius_m = norm(shstruct.ord_centres(i(end), :) - ...
+        shstruct.pupil_centre_pix)*shstruct.camera_pixsize + ...
+        shstruct.sa_radius_m;
+end
 r = shstruct.pupil_radius_m/shstruct.camera_pixsize;
 plot(c(1) + r*cos(l), c(2) + r*sin(l), 'y');
 
