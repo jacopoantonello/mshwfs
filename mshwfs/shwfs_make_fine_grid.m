@@ -105,5 +105,8 @@ shstruct.ord_centres = shstruct.centres(shstruct.enumeration, :);
 shstruct.ord_sqgrid = zeros(size(shstruct.ord_centres, 1), 4);
 shstruct.ord_sqgrid = shstruct.squaregrid(shstruct.enumeration, :);
 
+%% lookup the centres again this time using the fine grid
+[~, moved] = shwfs_get_deltas(shstruct.sh_flat, shstruct);
+shstruct.ord_centres = moved;
 
 end
