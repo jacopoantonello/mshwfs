@@ -1,4 +1,3 @@
-******************************************************
 MSHWFS - Modal-Shack-Hartmann-Wavefront-Sensor toolbox
 ******************************************************
 
@@ -7,7 +6,6 @@ MATLAB toolbox to estimate the wavefront from Shack-Hartmann wavefront sensor
 reconstruction method described in Section 1.3.2 of [A2014]_.
 
 
-=============
 Main Features
 =============
 
@@ -19,7 +17,6 @@ Main Features
 * contains an example with real SHWFS images 
 
 
-============
 Requirements
 ============
 
@@ -27,7 +24,6 @@ Requirements
 * a SHWFS reference image for calibration
 
 
-=====
 Usage
 =====
 
@@ -51,7 +47,6 @@ arbitrary SHWFS image. An example is provided in ``reconstruction.m``. To use
 your own images, just replace ``load img.mat``.
 
 
-==========
 References
 ==========
 
