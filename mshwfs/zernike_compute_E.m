@@ -36,20 +36,20 @@ azimtab = zstruct.azimtable;
 E = zeros(2*shstruct.nspots, ncoefs);
 
 sac = shstruct.pupil_centre_pix;
-rho_sa = sa_radius_m/pupil_radius_m;
+rbar = sa_radius_m/pupil_radius_m;
 
 kk = pupil_radius_m/(pi*(sa_radius_m^2));
 
 for i=1:nspots
     dx1dx2 = (ord_centres(i, :) - sac)*pixsize;
-    rho_0 = norm(dx1dx2)/(pupil_radius_m);
+    r = norm(dx1dx2)/(pupil_radius_m);
     % pupil is in canonical coordinates, x points right, y points up
 	% ord_centres is in plot coordinates x1 points right, x2 points down
 	% atan2(y, x), dx = dx1, dy = -dx2
-    theta_0 = atan2(-dx1dx2(2), dx1dx2(1));
-    if rho_0 > 1
+    gamma = atan2(-dx1dx2(2), dx1dx2(1));
+    if r > 1
         throw(MException('VerifyOutput:IllegalInput', ...
-            'The aperture radius is too small, use a larger pupil_radius_m'));
+            'Aperture radius is too small, use a larger pupil_radius_m'));
     end
     
     for zi=2:ncoefs
@@ -57,8 +57,7 @@ for i=1:nspots
         azimtabrow = azimtab(zi, :);
         
         [ey, ex] = zernike_compute_EyEx(...
-            radtabrow, azimtabrow, ...
-            rho_0, theta_0, rho_sa);
+            radtabrow, azimtabrow, r, gamma, rbar);
         % centres, boxes and deltas are in the plot() coordinate system
         % after imshow()!
         % deltas(:) will be [x1; x2] where x1 goes left to right and x2

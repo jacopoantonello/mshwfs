@@ -1,10 +1,11 @@
 % ZERNIKE_COMPUTE_EyEx compute Ey and Ex.
-%   [Ey, Ex] = ZERNIKE_COMPUTE_EyEx(RADROW, AZIMROW, RHO_0, THETA_0, R_SA).
+%   [Ey, Ex] = ZERNIKE_COMPUTE_EyEx(RADROW, AZIMROW, R, GAMMA, RBAR).
 %   See [P1990, D1994, A2014].
 %   RADROW      Zernike radial polynomial
 %   AZIMROW     azimuthal order
-%   THETA_0     (rho_0, theta_0) subaperture location
-%   R_SA        subaperture normalised radius (0, 1]
+%   R           subaperture location
+%   GAMMA       subaperture location
+%   RBAR        subaperture normalised radius (0, 1]
 %
 %   References:
 %   [P1990] J. Primot, G. Rousset, and J. Fontanella, "Deconvolution from
@@ -23,34 +24,47 @@
 % Author: Jacopo Antonello, <jack@antonello.org>
 % Technische Universiteit Delft
 
-function [Ey, Ex] = zernike_compute_EyEx(radrow, azimrow, ...
-    rho_0, theta_0, r_sa)
+function [Ey, Ex] = ...
+    zernike_compute_EyEx(radrow, azimrow, r, gamma, rbar)
 
-% rho_0 is in [0 1]
-% r_sa is in [0 1]
+% r is in [0 1]
+% rbar is in [0 1]
 
 % Ey Ex must be multiplied with lambda*f/(2*pi*A_sa)
 
-assert(rho_0 >= 0 && rho_0 < 1);
-assert(r_sa > 0 && r_sa < 1);
+assert(r >= 0 && r < 1);
+assert(rbar > 0 && rbar < 1);
 
 rhoindefint1 = polyint([polyder(radrow) 0]);
 rhoindefint2 = polyint(radrow);
 
-theta_a = theta_0 - atan(r_sa/rho_0);
-theta_b = theta_0 + atan(r_sa/rho_0);
+if r > rbar
+    thetas = gamma + ...
+        [acos(sqrt(r^2 - rbar^2)/r), - acos(sqrt(r^2 - rbar^2)/r)];
 
-rho_a = @(x) rho_0.*cos(x - theta_0) - ...
-    sqrt((rho_0.^2).*cos(x - theta_0) + ...
-    (r_sa.^2) - (rho_0.^2));
-rho_b = @(x) rho_0.*cos(x - theta_0) + ...
-    sqrt((rho_0.^2).*cos(x - theta_0) + ...
-    (r_sa.^2) - (rho_0.^2));
+    theta_a = min(thetas);
+    theta_b = max(thetas);
+    assert(theta_b > theta_a);
+
+    rho_a = @(x) r*cos(x - gamma) - ...
+        sqrt(r^2.*cos(x - gamma).^2 - (r^2 - rbar^2));
+    rho_b = @(x) r*cos(x - gamma) + ...
+        sqrt(r^2.*cos(x - gamma).^2 - (r^2 - rbar^2));
+else
+    theta_a = 0;
+    theta_b = 2*pi;
+
+    rho_a = @(x) 0*x;
+    rho_b = @(x) r*cos(x - gamma) + ...
+        sqrt(r^2.*cos(x - gamma).^2 - (r^2 - rbar^2));
+end
+
 
 rhoint1a = @(x) polyval(rhoindefint1, rho_a(x));
 rhoint1b = @(x) polyval(rhoindefint1, rho_b(x));
 rhoint2a = @(x) polyval(rhoindefint2, rho_a(x));
 rhoint2b = @(x) polyval(rhoindefint2, rho_b(x));
+
 psi = zernike_radialfun(azimrow);
 psider = zernike_radialderfun(azimrow);
 
@@ -62,8 +76,8 @@ integrandy = @(x) ...
     (rhoint1b(x) - rhoint1a(x)).*psi(x).*sin(x) + ...
     (rhoint2b(x) - rhoint2a(x)).*psider(x).*cos(x);
 
-Ex = quad(integrandx, theta_a, theta_b);
-Ey = quad(integrandy, theta_a, theta_b);
+Ex = integral(integrandx, theta_a, theta_b);
+Ey = integral(integrandy, theta_a, theta_b);
 
 end
 
