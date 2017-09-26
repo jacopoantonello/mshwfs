@@ -11,7 +11,7 @@ radc = radialtablerow(1);
 rads = radialtablerow(2);
 
 if radc == 0 && rads == 0
-    y = @(x) 0;
+    y = @(x) 0*x;
 elseif radc ~= 0
 %     y = @(x) cos(radc.*x);
     y = @(x) -sin(radc.*x).*radc;
