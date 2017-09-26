@@ -2,7 +2,7 @@
 % shstruct.mat has been created, you can estimate the wavefront from a
 % SHWFS image (img).
 
-clear all;
+clear;
 clc;
 close all;
 %%

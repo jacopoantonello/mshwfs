@@ -1,7 +1,7 @@
 % Calibration example. Adjust the parameters of your lenslet array and use
 % your SHWFS reference image.
 
-clear all;
+clear;
 close all;
 clc;
 %%
@@ -14,7 +14,7 @@ shstruct.use_bg = 0;               % subtract background from images
 shstruct.thresh_binary_img = 0.08; % threshold for binary image
 shstruct.npixsmall = 8;            % remove objects less than npixsmall
 shstruct.strel_rad = 8;            % strel ratio (image processing)
-shstruct.coarse_grid_radius = 16;  % radius for coarse grid
+shstruct.coarse_grid_radius = 12;  % radius for coarse grid
 shstruct.percent = 0.2;            % threshold used in centroid
 % scale estimated radius in the fine grid
 shstruct.multiply_est_radius = 1/sqrt(2);
