@@ -1,22 +1,24 @@
 % SHWFS_CALIBRATE.
-%   Script to run the calibration functions.
-%   sh_flat: reference SHWFS image.
-%   sh_flat_bg: dark reference SHWFS image.
+%   [SHSTRUCT] = SHWFS_CALIBRATE(SHSTRUCT, FILENAME, SH_FLAT, SH_FLAT_BG)
 %
 % Author: Jacopo Antonello, <jack@antonello.org>
-% Technische Universiteit Delft
 
-%% background
+function [shstruct] = shwfs_calibrate(...
+    shstruct, filename, sh_flat, sh_flat_bg)
+
 sfigure(1);
-imshow(sh_flat_bg);
+subplot(1, 2, 1);
+imagesc(sh_flat_bg);
+axis image;
+axis off;
+colorbar();
 title('background');
-drawnow();
-pause(.1);
-
-%% flat mirror reference
-sfigure(2);
-imshow(sh_flat);
-title('reference image');
+subplot(1, 2, 2);
+imagesc(sh_flat);
+axis image;
+axis off;
+colorbar();
+title('reference SH image');
 iimin = min(sh_flat(:));
 iimax = max(sh_flat(:));
 fprintf('[min, max] = [%.2f %.2f]\n', iimin, iimax);
@@ -26,24 +28,25 @@ shstruct.sh_flat_bg = sh_flat_bg;
 if exist('scflat', 'var')
     shstruct.scflat = scflat;
 end
+ask_confirm('continue?');
 
-ask_confirm('continue?');
-%% coarse grid with image processing
-shstruct = shwfs_make_coarse_grid(shstruct);
-ask_confirm('continue?');
-%% finer grid
+% coarse grid with image processing
 close all;
 clc;
+shstruct = shwfs_make_coarse_grid(shstruct, 1);
 
-shstruct = shwfs_make_fine_grid(shstruct);
-ask_confirm('continue?');
-%% Dai modal wavefront estimation
+% finer grid
 close all;
 clc;
+shstruct = shwfs_make_fine_grid(shstruct, 1);
 
-shstruct = shwfs_make_dai(shstruct);
-ask_confirm('continue?');
-%% save results
-filename = 'shstruct.mat';
-save(filename, 'shstruct');
+% Dai modal wavefront estimation
+close all;
+clc;
+shstruct = shwfs_make_dai(shstruct, 1);
+
+% save results
 fprintf('saved %s\n', filename);
+save(filename, 'shstruct');
+
+end
