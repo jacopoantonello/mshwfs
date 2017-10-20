@@ -83,7 +83,7 @@ for k=1:nspots
     % - after imshow, the origin for plot() is in the topleft corner,
     %   x1 points right, x2 points down
     % - grid & centres are stored in the plot coordinate system
-    % - subimages must be access sh_flat(box(3):box(4), box(1):box(2))
+    % - subimages must be accessed sh_flat(box(3):box(4), box(1):box(2))
     % - pupil coordinates are canonical xy axes, x right, y up
     % - zernike_surf & *dai* xy coordinates are refered to the pupil,
     %   not to the plot() axes
