@@ -7,7 +7,6 @@
 %   doi: 10.1364/AO.19.001510
 %
 % Author: Jacopo Antonello, <jack@antonello.org>
-% Technische Universiteit Delft
 
 function zstruct = zernike_cache(zstruct, xx, yy)
 

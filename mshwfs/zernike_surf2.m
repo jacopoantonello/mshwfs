@@ -2,7 +2,6 @@
 %   [TH, RH] = ZERNIKE_SURF2(ZSTRUCT, C, XX, YY, TH, RH).
 %
 % Author: Jacopo Antonello, <jack@antonello.org>
-% Technische Universiteit Delft
 
 function [th, rh] = zernike_surf2(zstruct, c, xx, yy, th, rh)
 

@@ -9,7 +9,6 @@
 %   centres(i, 1) corresponds to the i-th spot (shstruct.enumeration(i)).
 %
 % Author: Jacopo Antonello, <jack@antonello.org>
-% Technische Universiteit Delft
 
 function centres = shwfs_get_centres(img, shstruct, ...
     myfuncentroid)

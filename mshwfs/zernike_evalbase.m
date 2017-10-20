@@ -5,7 +5,6 @@
 %   TH      theta table
 %
 % Author: Jacopo Antonello, <jack@antonello.org>
-% Technische Universiteit Delft
 
 function y = zernike_evalbase(zstruct, ind, rh, th)
 

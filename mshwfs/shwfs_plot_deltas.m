@@ -2,7 +2,6 @@
 %   [DELTAS] = SHWFS_PLOT_DELTAS(IMG, SHSTRUCT).
 %
 % Author: Jacopo Antonello, <jack@antonello.org>
-% Technische Universiteit Delft
 
 function [deltas] = shwfs_plot_deltas(img, shstruct)
 

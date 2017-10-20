@@ -6,7 +6,6 @@
 %   points down). [cc(1)+dd(2)-1, cc(3)+dd(1)-1].
 %
 % Author: Jacopo Antonello, <jack@antonello.org>
-% Technische Universiteit Delft
 
 function [ret] = centroid(im, thr)
 

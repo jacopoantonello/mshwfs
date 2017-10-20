@@ -2,7 +2,6 @@
 %   [DELTAS] = SHWFS_PLOT_DELTAS_QUIVER(IMG, SHSTRUCT, REF2).
 %
 % Author: Jacopo Antonello, <jack@antonello.org>
-% Technische Universiteit Delft
 
 function [deltas, moved] = shwfs_plot_deltas_quiver(img, shstruct, ref2)
 

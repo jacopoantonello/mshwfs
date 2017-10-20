@@ -2,7 +2,6 @@
 %   [CHAT, ER, RER, MAP] = ZERNIKE_FIT(ZSTRUCT, W).
 %
 % Author: Jacopo Antonello, <jack@antonello.org>
-% Technische Universiteit Delft
 
 function [chat, er, rer, map] = zernike_fit(zstruct, w)
 

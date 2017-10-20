@@ -2,7 +2,6 @@
 %   [W, WV] = ZERNIKE_EVAL(ZSTRUCT, ZC).
 %
 % Author: Jacopo Antonello, <jack@antonello.org>
-% Technische Universiteit Delft
 
 function [w, wv] = zernike_eval(zstruct, zc)
 if nargout == 1

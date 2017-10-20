@@ -2,7 +2,6 @@
 %   [DELTAS, MOVED] = SHWFS_GET_DELTAS(IMG, SHSTRUCT).
 %
 % Author: Jacopo Antonello, <jack@antonello.org>
-% Technische Universiteit Delft
 
 function [deltas, moved] = shwfs_get_deltas(img, shstruct)
 

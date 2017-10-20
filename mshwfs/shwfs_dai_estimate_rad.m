@@ -8,7 +8,6 @@
 %   RER relative error
 %
 % Author: Jacopo Antonello, <jack@antonello.org>
-% Technische Universiteit Delft
 
 function [z, er, s, se, rer] = shwfs_dai_estimate_rad(img, shstruct, ...
     lambda)

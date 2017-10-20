@@ -3,7 +3,6 @@
 %   radial function given a radial table row.
 %
 % Author: Jacopo Antonello, <jack@antonello.org>
-% Technische Universiteit Delft
 
 function y = zernike_radialderfun(radialtablerow)
 
