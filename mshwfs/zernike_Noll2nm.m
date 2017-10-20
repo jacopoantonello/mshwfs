@@ -11,8 +11,7 @@
 %   (1994);
 %   doi: 10.1364/AO.33.008121
 %
-% Author: Jacopo Antonello <jacopo.antonello@dpag.ox.ac.uk>
-% Centre for Neural Circuits and Behaviour, University of Oxford
+% Author: Jacopo Antonello, <jack@antonello.org>
 
 function [n, m, nollstr, nmstr] = zernike_Noll2nm(zstruct, noll)
 n = zstruct.jtonmtable(noll, 1);

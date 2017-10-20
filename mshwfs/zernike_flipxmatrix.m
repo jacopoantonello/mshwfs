@@ -27,8 +27,7 @@
 %     plot(zc1, 'Marker', 'x');
 %     grid on;
 %
-% Author: Jacopo Antonello <jacopo.antonello@dpag.ox.ac.uk>
-% Centre for Neural Circuits and Behaviour, University of Oxford
+% Author: Jacopo Antonello, <jack@antonello.org>
 
 function [R] = zernike_flipxmatrix(zstruct)
 jtonmtable = zstruct.jtonmtable;

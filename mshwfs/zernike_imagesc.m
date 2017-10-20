@@ -1,8 +1,7 @@
 % ZERNIKE_IMAGESC plot w=Z*c.
 %   [] = ZERNIKE_IMAGESC(ZSTRUCT, C).
 %
-% Author: Jacopo Antonello <jacopo.antonello@dpag.ox.ac.uk>
-% Centre for Neural Circuits and Behaviour, University of Oxford
+% Author: Jacopo Antonello, <jack@antonello.org>
 
 function [] = zernike_imagesc(zstruct, c)
 Z = zernike_eval(zstruct, c);
