@@ -2,7 +2,7 @@
 %   [SHSTRUCT] = SHWFS_MAKE_COARSE_GRID(SHSTRUCT). Make a coarse grid to
 %   compute the centroids using the image processing toolbox.
 %
-% Author: Jacopo Antonello, <jack@antonello.org>
+% Author: Jacopo Antonello, <jacopo@antonello.org>
 
 function [shstruct] = shwfs_make_coarse_grid(shstruct, wait)
 

@@ -1,7 +1,7 @@
 % SHWFS_CALIBRATE.
 %   [SHSTRUCT] = SHWFS_CALIBRATE(SHSTRUCT, FILENAME, SH_FLAT, SH_FLAT_BG)
 %
-% Author: Jacopo Antonello, <jack@antonello.org>
+% Author: Jacopo Antonello, <jacopo@antonello.org>
 
 function [shstruct] = shwfs_calibrate(...
     shstruct, filename, sh_flat, sh_flat_bg)

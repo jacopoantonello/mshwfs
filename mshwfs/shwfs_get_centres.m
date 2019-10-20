@@ -8,7 +8,7 @@
 %   Displacements are ordered according to shstruct.enumeration.
 %   centres(i, 1) corresponds to the i-th spot (shstruct.enumeration(i)).
 %
-% Author: Jacopo Antonello, <jack@antonello.org>
+% Author: Jacopo Antonello, <jacopo@antonello.org>
 
 function centres = shwfs_get_centres(img, shstruct, ...
     myfuncentroid)

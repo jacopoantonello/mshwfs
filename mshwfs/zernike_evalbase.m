@@ -4,7 +4,7 @@
 %   RH      rho table
 %   TH      theta table
 %
-% Author: Jacopo Antonello, <jack@antonello.org>
+% Author: Jacopo Antonello, <jacopo@antonello.org>
 
 function y = zernike_evalbase(zstruct, ind, rh, th)
 

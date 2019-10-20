@@ -1,7 +1,7 @@
 % ZERNIKE_EVAL evaluate w=Z*c.
 %   [W, WV] = ZERNIKE_EVAL(ZSTRUCT, ZC).
 %
-% Author: Jacopo Antonello, <jack@antonello.org>
+% Author: Jacopo Antonello, <jacopo@antonello.org>
 
 function [w, wv] = zernike_eval(zstruct, zc)
 if nargout == 1

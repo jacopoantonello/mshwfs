@@ -1,7 +1,7 @@
 % ZERNIKE_SURF2 plot w=Z*c.
 %   [TH, RH] = ZERNIKE_SURF2(ZSTRUCT, C, XX, YY, TH, RH).
 %
-% Author: Jacopo Antonello, <jack@antonello.org>
+% Author: Jacopo Antonello, <jacopo@antonello.org>
 
 function [th, rh] = zernike_surf2(zstruct, c, xx, yy, th, rh)
 

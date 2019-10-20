@@ -11,7 +11,7 @@
 %   (1994);
 %   doi: 10.1364/AO.33.008121
 %
-% Author: Jacopo Antonello, <jack@antonello.org>
+% Author: Jacopo Antonello, <jacopo@antonello.org>
 
 function zstruct = zernike_table(n)
 

@@ -1,7 +1,7 @@
 % ZERNIKE_FIT estimate c from w=Z*c.
 %   [CHAT, ER, RER, MAP] = ZERNIKE_FIT(ZSTRUCT, W).
 %
-% Author: Jacopo Antonello, <jack@antonello.org>
+% Author: Jacopo Antonello, <jacopo@antonello.org>
 
 function [chat, er, rer, map] = zernike_fit(zstruct, w)
 

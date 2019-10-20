@@ -27,7 +27,7 @@
 %     plot(zc1, 'Marker', 'x');
 %     grid on;
 %
-% Author: Jacopo Antonello, <jack@antonello.org>
+% Author: Jacopo Antonello, <jacopo@antonello.org>
 
 function [R] = zernike_flipxmatrix(zstruct)
 jtonmtable = zstruct.jtonmtable;

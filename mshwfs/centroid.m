@@ -5,7 +5,7 @@
 %   plot() coordinates, (origin is in the top left, x points right, y
 %   points down). [cc(1)+dd(2)-1, cc(3)+dd(1)-1].
 %
-% Author: Jacopo Antonello, <jack@antonello.org>
+% Author: Jacopo Antonello, <jacopo@antonello.org>
 
 function [ret] = centroid(im, thr)
 

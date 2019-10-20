@@ -6,7 +6,7 @@
 %   polynomials," Appl. Opt.  19, 1510-1518 (1980);
 %   doi: 10.1364/AO.19.001510
 %
-% Author: Jacopo Antonello, <jack@antonello.org>
+% Author: Jacopo Antonello, <jacopo@antonello.org>
 
 function zstruct = zernike_cache_pol(zstruct, th, rh)
 

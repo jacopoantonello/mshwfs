@@ -2,7 +2,7 @@
 %   Y = ZERNIKE_RADIALDERFUN(RADIALTABLEROW) returns the derivative of the
 %   radial function given a radial table row.
 %
-% Author: Jacopo Antonello, <jack@antonello.org>
+% Author: Jacopo Antonello, <jacopo@antonello.org>
 
 function y = zernike_radialderfun(radialtablerow)
 

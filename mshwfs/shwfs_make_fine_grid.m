@@ -2,7 +2,7 @@
 %   [SHSTRUCT] = SHWFS_MAKE_FINE_GRID(SHSTRUCT). Make a fine grid to
 %   compute the centroids using the image processing toolbox.
 %
-% Author: Jacopo Antonello, <jack@antonello.org>
+% Author: Jacopo Antonello, <jacopo@antonello.org>
 
 function [shstruct] = shwfs_make_fine_grid(shstruct, wait)
 

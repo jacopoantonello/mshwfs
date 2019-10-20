@@ -7,7 +7,7 @@
 %   SE reconstructed slopes
 %   RER relative error
 %
-% Author: Jacopo Antonello, <jack@antonello.org>
+% Author: Jacopo Antonello, <jacopo@antonello.org>
 
 function [z, er, s, se, rer] = shwfs_dai_estimate_rad(img, shstruct, ...
     lambda)

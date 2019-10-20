@@ -21,7 +21,7 @@
 %   (2014);
 %   doi: 10.4233/uuid:f98b3b8f-bdb8-41bb-8766-d0a15dae0e27See
 %
-% Author: Jacopo Antonello, <jack@antonello.org>
+% Author: Jacopo Antonello, <jacopo@antonello.org>
 
 function [Ey, Ex] = ...
     zernike_compute_EyEx(radrow, azimrow, r, gamma, rbar)
