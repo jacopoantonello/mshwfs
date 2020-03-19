@@ -1,5 +1,5 @@
 # MSHWFS - Modal-Shack-Hartmann-Wavefront-Sensor toolbox
-MATLAB toolbox to estimate wavefronts from Shack-Hartmann wavefront sensor (SHWFS) images. This toolbox implements the modal-based wavefront reconstruction method described in Section 1.3.2 of [(1)]. It also contains code to generate and plot Zernike polynomials as defined by Noll [(2)].
+MATLAB toolbox to estimate wavefronts from Shack-Hartmann wavefront sensor (SHWFS) images. This toolbox implements the modal-based wavefront reconstruction method described in Section 1.3.2 of [[1]](#1). It also contains code to generate and plot Zernike polynomials as defined by Noll [(2)](#2).
 
 ## Main Features
 - automatic calibration from a given SHWFS reference image
@@ -28,9 +28,6 @@ You can run the calibration using the example SHWFS reference image found in
 Once the calibration is complete, you can estimate the wavefront from an arbitrary SHWFS image. An example is provided in `reconstruction.m`. To use your own images, just replace `load img.mat`.
 
 ## References
-[(1)] J. Antonello, "Optimisation-based wavefront sensorless adaptive optics for microscopy," Ph.D. thesis, Delft University of Technology (2014)
-[(2)] Robert J. Noll, "Zernike polynomials and atmospheric turbulence*," J. Opt. Soc. Am. 66, 207-211 (1976)
+<a id="1">[1]</a> J. Antonello, "Optimisation-based wavefront sensorless adaptive optics for microscopy," Ph.D. thesis, Delft University of Technology (2014). [10.4233/uuid:f98b3b8f-bdb8-41bb-8766-d0a15dae0e27](https://doi.org/10.4233/uuid:f98b3b8f-bdb8-41bb-8766-d0a15dae0e27)
 
-
-[(1)]: http://antonello.org/phd-thesis.pdf
-[(2)]: https://doi.org/10.1364/JOSA.66.000207
+<a id="2">[2]</a> Robert J. Noll, "Zernike polynomials and atmospheric turbulence," J. Opt. Soc. Am. 66, 207-211 (1976). [10.1364/JOSA.66.000207](https://doi.org/10.1364/JOSA.66.000207)
