@@ -1,4 +1,4 @@
-# MSHWFS - Modal-Shack-Hartmann-Wavefront-Sensor toolbox
+# MSHWFS - Modal-Shack-Hartmann-Wavefront-Sensor
 
 [![DOI](https://img.shields.io/badge/DOI-10.4233%2Fuuid%3Af98b3b8f--bdb8--41bb--8766--d0a15dae0e27-blue)](https://doi.org/10.4233/uuid:f98b3b8f-bdb8-41bb-8766-d0a15dae0e27)
 
