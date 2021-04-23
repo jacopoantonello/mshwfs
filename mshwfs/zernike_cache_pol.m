@@ -54,7 +54,4 @@ end
 zstruct.zi = zi;
 zstruct.nel = nel;
 
-ZtZ = zi(vsuppmap, :)'*zi(vsuppmap, :);
-zstruct.ZtZ = ZtZ;
-
 end

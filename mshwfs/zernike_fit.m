@@ -15,8 +15,9 @@ end
 
 % consider only the unit circle and finite values
 map = logical(isfinite(w).*zstruct.vsuppmap);
-Ztw = zstruct.zi(map, :)'*w(map);
-chat = zstruct.ZtZ\Ztw;
+Zi = zstruct.zi(map, :);
+Ztw = Zi'*w(map);
+chat = (Zi'*Zi)\Ztw;
 
 if nargout >= 2
     er = w - zstruct.zi*chat;

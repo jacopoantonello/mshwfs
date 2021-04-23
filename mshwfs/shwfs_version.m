@@ -1,3 +1,3 @@
 function shwfs_version()
-fprintf('mshwfs version 1.0.6\n');
+fprintf('mshwfs version 1.0.7\n');
 end
